@@ -1,0 +1,23 @@
+mixin page-header(data)
+    header.page-header
+        .page-header__top
+            .page-header__logo
+                img(src="%=static=%img/general/logo.png", width="188", height="74" alt="Логотип Ростелеком")
+            h1.page-header__title Подключение в Санкт-Петербурге и Ленинградской Области
+            .page-header__contacts
+                a(href="tel:+78126271430").page-header__tel +7 (812) 627-14-30
+                p.page-header__timetable График работы с 09:00 до 22:00 (без выходных)
+        .page-header__bottom
+            nav.main-nav
+                ul.main-menu
+                    li.main-menu__item
+                        a(href="#").main-menu__link Акции
+                    li.main-menu__item
+                        a(href="#").main-menu__link Интернет
+                    li.main-menu__item
+                        a(href="#").main-menu__link Пакеты услуг
+                    li.main-menu__item
+                        a(href="#").main-menu__link Телевидение
+                    li.main-menu__item
+                        a(href="#").main-menu__link Телефония
+            a(href="#", data-popup="call").btn.btn--orange.page-header__call Обратный звонок

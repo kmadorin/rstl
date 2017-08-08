@@ -1,0 +1,31 @@
+/*  ==========================================================================
+  Back to top
+  ==========================================================================  */
+.page__totop {
+  opacity: 0;
+  right: 15px;
+  /* left position */
+  bottom: -50px;
+  z-index: 100;
+  position: fixed;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  font-size: 0;
+  -webkit-transition: all 0.4s ease-out;
+  transition: all 0.4s ease-out;
+  @include bg($totop-icon);
+}
+
+.page__totop:hover {
+  opacity: 1;
+}
+
+.page__totop--active {
+  opacity: .7;
+  bottom: 33px;
+  /* bottom position */
+  -webkit-transition: opacity 0.4s ease-out;
+  transition: opacity 0.4s ease-out;
+}

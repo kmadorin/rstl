@@ -1,0 +1,138 @@
+.tarifs {
+  margin-bottom: 62px;
+  &__footer {
+    text-align: center;
+    margin-top: 48px;
+  }
+  &__btn {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.tarif {
+  margin-top: 36px;
+  &:first-child {
+    margin-top: 0;
+  }
+  background: #FFF;
+  padding-right: 32px;
+  padding-left: 35px;
+  padding-bottom: 32px;
+  position: relative;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.05), 0 0px 20px rgba(0,0,0,0.02);
+  &:before {
+    content: "Акция";
+    display: none;
+    position: absolute;
+    right: -10px;
+    top: 30px;
+    height: 38px;
+    padding: 0 10px;
+    border-radius: 3px;
+    background-color: #d73636;
+    text-transform: uppercase;
+    line-height: 38px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #fffefe;
+  }
+  &--action {
+    border: solid 1px #d73636;
+    &:before {
+      display: inline-block;
+    }
+  }
+
+  &__header {
+    padding-top: 34px;
+    padding-bottom: 29px;
+  }
+  &__heading {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 0.86;
+    color: #002222;
+  }
+  &__text {
+    color: #555555;
+    line-height: 1.33;
+    font-size: 18px;
+    margin: 0;
+  }
+  &__link {
+    color: #00abe9;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &__chars {
+    @include nl;
+    padding-top: 25px;
+    padding-bottom: 24px;
+    font-size: 0;
+  }
+  &__char {
+
+    display: inline-block;
+    margin-left: 30px;
+    vertical-align: middle;
+    &:first-child {
+      margin-left: 0;
+    }
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 18px;
+      line-height: 1.33;
+      color: #3b849a;
+    }
+  }
+  &__icon {
+    fill: #5eabc2;
+    margin-right: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    &--tel {
+      position: relative;
+      top: -2px;
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__price {
+    width: 200px;
+  }
+  &__pricenumber {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 0.8;
+    color: #111111;
+    display: block;
+  }
+  &__pricelink {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.33;
+    color: #ff7600;
+    display: inline-block;
+    margin-top: 7px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &__btns {
+    margin-left: auto;
+  }
+  &__btn {
+    padding: 12px 27px;
+    margin-left: 11px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

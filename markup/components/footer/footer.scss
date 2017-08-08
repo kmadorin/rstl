@@ -1,0 +1,50 @@
+.page-footer {
+  padding-bottom: 40px;
+  &__container {
+    width: 1140px;
+    margin: 0 auto;
+  }
+  &__row {
+    width: 848px;
+    @include cf;
+  }
+  &__col {
+    &--left {
+      width: 489px;
+      float: left;
+    }
+    &--right {
+      width: 327px;
+      float: right;
+    }
+  }
+  &__copy {
+    font-size: 13px;
+    color: #8c8c8c;
+    padding-top: 40px;
+    margin: 0;
+
+  }
+}
+
+.f-block {
+  background: #FFF;
+  padding-top: 27px;
+  padding-bottom: 21px;
+  padding-left: 30px;
+  padding-right: 30px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.05), 0 0px 20px rgba(0,0,0,0.02);
+  &__text, &__text a {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #6e6d6d;
+    margin: 0;
+    text-decoration: none;
+  }
+  &__heading {
+    font-size: 18px;
+    font-weight: 600;
+    color: #373737;
+    margin: 0;
+  }
+}

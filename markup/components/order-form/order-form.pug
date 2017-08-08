@@ -1,0 +1,9 @@
+mixin order-form(data)
+  form.order-form(action="order.php", method="POST")
+    h3.order-form__heading Заявка на подключение
+    .order-form__field
+        input(type="text" placeholder="Ваше имя")
+    .order-form__field
+        input(type="tel" placeholder="Ваш телефон")
+    .order-form__submit
+        input(type="submit", value="Подключить").btn.btn--orange

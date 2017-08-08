@@ -1,0 +1,39 @@
+// Common styles of the project
+
+html, body {
+    min-height: 100%;
+}
+
+.page {
+    font-family: $opensans;
+    &--desktop {
+      background: url('%=static=%/general/page-bg.jpg') 0 0 no-repeat;
+      background-size: cover;
+    }
+    &--popup-opened {
+
+    }
+}
+
+.page__container {
+  width: 1140px;
+  margin: 0 auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 22px;
+}
+
+
+.l-page {
+  @include cf;
+  &__content {
+    width: 848px;
+    float: left;
+  }
+  &__sidebar {
+    float: right;
+    width: 262px;
+    position: relative;
+  }
+}
+

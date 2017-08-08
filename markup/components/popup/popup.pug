@@ -1,0 +1,127 @@
+include ../eqt-item/eqt-item.pug
+include ../channel/channel.pug
+mixin popup(type)
+  if type === "tarif"
+    .popup__wrapper.popup__wrapper--tarif
+      .popup.popup--tarif
+        .popup__header
+          h3.popup__title Домашний Интернет 25 Мбит/с (Docsis)
+        .popup__content
+          .r-tabs
+            input(type="radio" class="r-tabs__rinput" name="tarif-tabs" id="tab-more" checked)
+            input(type="radio" class="r-tabs__rinput" name="tarif-tabs" id="tab-channels")
+            input(type="radio" class="r-tabs__rinput" name="tarif-tabs" id="tab-equipment")
+            .r-tabs__controls
+              label(for="tab-more") Подробное описание
+              label(for="tab-channels") Список ТВ каналов
+              label(for="tab-equipment") Оборудование
+            .r-tabs__content
+              .r-tab.r-tab--1
+                section.r-tab__more
+                  p.tarif__text Тариф для новых и действующих абонентов. <br> Wi-Fi роутер продажа 1300 рублей / рассрочка на 24 месяца - 70 руб/мес. Подключение и настройка Wi-fi роутера клиента бесплатно. <br> Подключение БЕСПЛАТНОЕ по технологии DOCSIS с помощью коаксиального кабеля, при этом сохраняется высокая скорость передачи данных и быстрая загрузка файлов.
+                  ul.tarif__chars
+                    li.tarif__char
+                      != pugHelpers.Icon.call(locals, {iconName: 'phone', className: 'tarif__icon', iconWidth: '21', iconHeight: '25'})
+                      span Мобильный интернет
+                    li.tarif__char
+                      != pugHelpers.Icon.call(locals, {iconName: 'download', className: 'tarif__icon', iconWidth: '21', iconHeight: '25'})
+                      span Скорость: 25 мбит/сек.
+                    li.tarif__char
+                      != pugHelpers.Icon.call(locals, {iconName: 'television', className: 'tarif__icon tarif__icon--tel', iconWidth: '25', iconHeight: '25'})
+                      span Каналов: 108 шт.
+                  .tarif__footer
+                    .tarif__price
+                        strong.tarif__pricenumber 850 Р/мес.
+              .r-tab.r-tab--2
+                section.channels
+                  .channels__wrapper
+                    .channels__row
+                      - var i = 0
+                      - var j = 0
+                      while i < 3
+                        - i++
+                        - j = 0
+                        .channels__col
+                          while j<10
+                            - j++
+                            +channel()
+                    .channels__shadow
+              .r-tab.r-tab--3
+                section.eqt
+                  - var k = 0
+                  while k < 3
+                    - k++
+                    +eqt-item()
+        .popup__footer
+          form.p-order-form
+            h3.p-order-form__heading Оформить заявку
+            .p-order-form__row
+              .p-order-form__leftcol
+                .p-order-form__field
+                  label Ваше имя
+                  input(type="text")
+                .p-order-form__field
+                  label Ваш телефон
+                  input(type="text")
+              .p-order-form__rightcol
+                .p-order-form__logo
+                  img(src="%=static=%img/general/logo.png", width="188", height="74" alt="Логотип Ростелеком")
+            .p-order-form__row.p-order-form__row--last
+              .p-order-form__leftcol
+                .p-order-form__check
+                  input(type="checkbox" name="agreement" id="agreement")
+                  label(for="agreement")
+                    | Подтверждаю свое согласие с &nbsp;
+                    a(href="#") условиями
+                    | &nbsp; передачи данных
+              .p-order-form__rightcol
+                .p-order-form__submit
+                  input(type="submit" value="Подключить").btn.btn--orange
+        a.popup__close(href='#') Закрыть
+  else if type === "call"
+    .popup__wrapper.popup__wrapper--call
+      .popup.popup--call
+        .popup__heading Заказать обратный звонок
+        form.p-form
+          .p-form__field
+            input(type="text", id="call-name" placeholder="Ваше имя")
+          .p-form__field
+            input(type="tel", id="call-tel" placeholder="Ваше телефон")
+          .p-form__check
+            input(type="checkbox" name="agreement" id="agreement1")
+            label(for="agreement1")
+              | Подтверждаю свое согласие с &nbsp;
+              a(href="#") условиями
+              | &nbsp; передачи данных
+          .p-form__submit
+            button(type="submit").btn.btn--orange Заказать звонок
+        a.popup__close(href='#') Закрыть
+  else if type === "turnon"
+    .popup__wrapper.popup__wrapper--turnon
+      .popup.popup--turnon
+        .popup__welcome
+          span.popup__welcometext Подключение тарифа:
+          span.popup__welcometarif Два Интернета" 25 + скидка 50% за мобильную связь (Docsis)
+        form.p-form
+          .p-form__field
+            input(type="text", id="turnon-name" placeholder="Ваше имя")
+          .p-form__field
+            input(type="tel", id="turnon-tel" placeholder="Ваше телефон")
+          .p-form__check
+            input(type="checkbox" name="agreement" id="agreement2")
+            label(for="agreement2")
+              | Подтверждаю свое согласие с &nbsp;
+              a(href="#") условиями
+              | &nbsp; передачи данных
+          .p-form__submit
+            button(type="submit").btn.btn--orange Оформить заказ
+        a.popup__close(href='#') Закрыть
+  else if type === "thanks"
+    .popup__wrapper.popup__wrapper--thanks
+      .popup.popup--thanks
+        .popup__twrapper
+          .popup__ticon
+          .popup__tcontent
+            h3.popup__theading Спасибо за заявку
+            p.popup__ttext Скоро с Вами свяжется наш менеджер
+        a.popup__close(href='#') Закрыть

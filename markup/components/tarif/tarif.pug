@@ -1,0 +1,29 @@
+mixin tarif(type)
+  - var tarifType = ""
+  if type !== ""
+    - tarifType = " tarif--" + type
+  article(class="tarif" + tarifType)
+      header.tarif__header
+          h2.tarif__heading Домашний Интернет 25 Мбит/с (Docsis)
+      p.tarif__text
+          | Специальный игровой тариф. Уникальный игровой комплект WORLD OF TANKS! Элитный танк VIII уровня Т44-100 (Р) в ПОДАРОК!&nbsp;
+          a(href="#").tarif__link Характеристики танка
+          | &nbsp; Подключение по технологии GPON с помощью специального…
+      ul.tarif__chars
+          li.tarif__char
+              != pugHelpers.Icon.call(locals, {iconName: 'phone', className: 'tarif__icon', iconWidth: '21', iconHeight: '25'})
+              span Мобильный интернет
+          li.tarif__char
+              != pugHelpers.Icon.call(locals, {iconName: 'download', className: 'tarif__icon', iconWidth: '21', iconHeight: '25'})
+              span Скорость: 25 мбит/сек.
+          li.tarif__char
+              != pugHelpers.Icon.call(locals, {iconName: 'television', className: 'tarif__icon tarif__icon--tel', iconWidth: '25', iconHeight: '25'})
+              span Каналов: 108 шт.
+      footer.tarif__footer
+          .tarif__price
+              strong.tarif__pricenumber 850 Р/мес.
+              a(href="#", data-popup="tarif", data-tab="equipment").tarif__pricelink Оборудование
+          .tarif__btns
+              a(href="#", data-popup="tarif", data-tab="channels").btn.btn--gray.tarif__btn Список каналов
+              a(href="#", data-popup="tarif", data-tab="more").btn.btn--blue.tarif__btn Подробнее
+              a(href="#", data-popup="turnon").btn.btn--orange.tarif__btn Подключить

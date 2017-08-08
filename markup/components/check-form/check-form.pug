@@ -1,0 +1,12 @@
+mixin check-form(data)
+  form.check-form(action="order.php", method="POST")
+    h3.check-form__heading Проверить возможность подключения
+    .check-form__field
+        textarea(placeholder="Введите улицу")
+    .check-form__row
+        .check-form__field.check-form__col
+            input(type="text" placeholder="Дом")
+        .check-form__field.check-form__col.check-form__col--right
+            input(type="text" placeholder="Корпус")
+    .check-form__submit
+        input(type="submit", value="Проверить").btn.btn--blue

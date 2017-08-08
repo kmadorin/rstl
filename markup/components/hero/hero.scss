@@ -1,0 +1,12 @@
+.hero {
+  margin-top: 27px;
+  margin-bottom: 23px;
+  &__text {
+    font-size: 0;
+  }
+  &__banner {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}

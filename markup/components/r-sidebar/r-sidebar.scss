@@ -1,0 +1,11 @@
+.r-sidebar {
+  width: 262px;
+  &--fixed {
+    position: fixed;
+    top: 10px;
+  }
+  &--absolute {
+    position: absolute;
+
+  }
+}

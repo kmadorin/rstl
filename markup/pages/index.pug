@@ -1,0 +1,48 @@
+doctype html
+html(class="no-js", lang="ru")
+
+    include ../components/head/head.pug
+    include ../components/example/example.pug
+    include ../components/footer/footer.pug
+    include ../components/page-header/page-header.pug
+    include ../components/hero/hero.pug
+    include ../components/tarif/tarif.pug
+    include ../components/r-sidebar/r-sidebar.pug
+    include ../components/map/map.pug
+    include ../components/popup/popup.pug
+
+    head
+        +head(head.index)
+    body.page.page--desktop
+        |%=symbols=%
+
+        section.page__wrapper
+            .page__container
+                +page-header()
+                +hero()
+                .l-page
+                    main.l-page__content
+                        section.tarifs
+                            +tarif('action')
+                            +tarif()
+                            .tarifs__footer
+                                a(href="#").btn.btn--blue.tarifs__btn Тарифы по телефонному проводу
+                        +map()
+                    aside.l-page__sidebar
+                      +r-sidebar()
+        .page__footer
+            +footer()
+
+        //- Кнопка наверх
+        button.page__totop Наверх
+
+        //- Модальные окна
+        +popup('tarif')
+        +popup('call')
+        +popup('turnon')
+        +popup('thanks')
+        script(src='%=static=%js/separate-js/svg4everybody.min.js')
+        script svg4everybody();
+
+        //- Main scripts. You can replace it, but I recommend you to leave it here
+        script(src='%=static=%js/main%=hash=%%=min=%.js')
